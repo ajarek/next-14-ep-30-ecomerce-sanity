@@ -1,12 +1,15 @@
-import PopularBikes from "@/components/PopularBikes";
-import Image from "next/image";
+import PopularBikes from '@/components/PopularBikes'
 
-
-
-export default function Home() {
+const Home = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className="flex min-h-screen flex-col items-center justify-between px-12 py-4">
+      <h1 className='text-center text-2xl'>Popular bikes</h1>
+       <p className='text-center'>
+        The Worlds Premium Brands In One Destination
+       </p>
       <PopularBikes/>
-    </main>
-  );
+    </div>
+  )
 }
+
+export default Home

@@ -1,5 +1,5 @@
 import { client } from '@/lib/sanity'
-import PopularBikeCarousel from './PopularBikeCarousel'
+import Carousel from '@/components/Carousel'
 
 const getData = async () => {
   const query = `*[_type == 'product' && references(*[_type == 'category'  && name == 'popular']._id, categories )]{
@@ -12,21 +12,18 @@ const getData = async () => {
       "slug": slug.current,
       "categories": categories[]-> {name}
   }`
-  const data = await client.fetch(query)
-  return data
+    const data = await client.fetch(query)
+    return data
 }
 
 const PopularBikes = async () => {
   const bikes = await getData()
 
   return (
-    <div>
-      <h1 className='text-center text-2xl'>Popular bikes</h1>
-      <p className='text-center'>
-        The Worlds Premium Brands In One Destination{' '}
-      </p>
-      <PopularBikeCarousel bikes={bikes} />
-    </div>
+    <>
+    <Carousel bikes={bikes} />  
+    </>
+    
   )
 }
 
