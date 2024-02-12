@@ -3,42 +3,43 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import MobileMenu from './MobileMenu'
 import Image from 'next/image'
-
+import { ShoppingBag, Bike } from 'lucide-react'
 const Navbar = () => {
   return (
-    <div className='h-[80px] flex justify-between items-center bg-secondary text-secondary-foreground px-4 border-border'>
+    <div className='h-[80px] flex justify-between items-center bg-secondary text-secondary-foreground px-8 border-border'>
       <div className='flex items-center'>
         <Link
           href={'/'}
-          className='btn btn-ghost max-sm:btn-sm text-xl'
+          className='flex justify-center items-center link link-hover text-xl text-red-500 font-bold gap-2'
         >
-          Bikes Store
+          <Bike
+            color='#e11414'
+            size={30}
+          />
+          BIKES STORE
         </Link>
       </div>
-      <div className=' w-1/2  flex justify-center max-sm:hidden gap-4  '>
+      <div className=' w-1/2  flex justify-center max-sm:hidden gap-5  '>
         <Link
           href='/'
           className='link link-hover btn-ghost text-xl'
         >
-          Home
+          HOME
         </Link>
         <Link
-          href='/store/men'
+          href='/store/bikes'
           className='link link-hover btn-ghost text-xl'
         >
-          Men
+          OUR BIKES
         </Link>
         <Link
-          href='/store/women'
-          className='link link-hover btn-ghost text-xl'
+          href='/cart'
+          className='link link-hover btn-ghost text-xl flex relative items-center'
         >
-          Women
-        </Link>
-        <Link
-          href='/store/all'
-          className=' link link-hover btn-ghost text-xl'
-        >
-          All
+          <div className='w-5 h-5 rounded-full text-secondary text-sm bg-red-600 absolute top-3 left-4 flex justify-center items-center '>
+            0
+          </div>
+          <ShoppingBag />
         </Link>
       </div>
     </div>
