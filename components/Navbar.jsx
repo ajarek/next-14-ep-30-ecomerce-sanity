@@ -1,10 +1,10 @@
 'use client'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
-import MobileMenu from './MobileMenu'
-import Image from 'next/image'
 import { ShoppingBag, Bike } from 'lucide-react'
+import CartSidebar from '@/components/CartSidebar'
+import { useShoppingCart } from 'use-shopping-cart'
 const Navbar = () => {
+  const {cartCount, handleCartClick} = useShoppingCart()
   return (
     <div className='h-[80px] flex justify-between items-center bg-secondary text-secondary-foreground px-8 border-border'>
       <div className='flex items-center'>
@@ -32,15 +32,16 @@ const Navbar = () => {
         >
           OUR BIKES
         </Link>
-        <Link
-          href='/cart'
+        <div
+          onClick={()=>handleCartClick()}
           className='link link-hover btn-ghost text-xl flex relative items-center'
         >
           <div className='w-5 h-5 rounded-full text-secondary text-sm bg-red-600 absolute top-3 left-4 flex justify-center items-center '>
-            0
+           {cartCount}
           </div>
           <ShoppingBag />
-        </Link>
+        </div>
+        <CartSidebar />
       </div>
     </div>
   )

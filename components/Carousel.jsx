@@ -42,11 +42,11 @@ export default function Carousel({ bikes }) {
                 thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
             }}
             modules={[FreeMode, Navigation, Thumbs]}
-            className='h-[246] w-[400px] rounded-lg cursor-grab'
+            className='h-[256] w-[400px] rounded-lg cursor-grab '
           >
             {bikes.map((image, index) => (
               <SwiperSlide key={index}>
-                <div className='flex h-full w-full items-center justify-center'>
+                <div className='flex h-full w-full items-center justify-center relativ'>
                   <Image
                     src={urlFor(image.images[0]).url()}
                     alt={image.name}
@@ -54,6 +54,9 @@ export default function Carousel({ bikes }) {
                     height={256}
                     className='block h-full w-full object-cover'
                   />
+                  <Link href={`product/${image._id}`}className='absolute top-1 right-1 bg-red-500 text-white p-1 rounded-sm'>
+                  I choose
+                </Link>
                 </div>
               </SwiperSlide>
             ))}
@@ -74,9 +77,9 @@ export default function Carousel({ bikes }) {
           {bikes.map((image, index) => (
             <SwiperSlide key={index}>
               <button className='flex h-full w-full items-center justify-center bg-secondary border-2 border-border rounded-lg px-2 py-10 relative'>
-                <Link href={`product/${image._id}`}className='absolute top-1 left-2 bg-red-500 text-white p-1 rounded-sm'>
+                <div className='absolute top-1 left-2 bg-gray-500 text-white p-1 rounded-sm'>
                   {image.name}
-                </Link>
+                </div>
                 <Image
                   src={urlFor(image.images[0]).url()}
                   alt={image.name}
