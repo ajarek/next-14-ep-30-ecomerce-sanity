@@ -39,6 +39,7 @@ const ProductDetail =async ({params}) => {
         <p className='text-xl'>{productId.description}</p>
         <p className='text-2xl'>${(productId.price).toFixed(2)}</p>
         <AddToCartBtn
+        id={productId._id}
         name={productId.name} 
         currency='USD'
         description={productId.description}
