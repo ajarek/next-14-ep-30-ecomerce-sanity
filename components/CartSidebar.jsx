@@ -5,10 +5,13 @@ import {
   SheetContent,
   SheetDescription,
   SheetHeader,
+  ScrollArea,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { useShoppingCart } from "use-shopping-cart"
+import CartItem from "./CartItem"
+
 const CartSidebar = () => {
   const {cartCount, cartDetails, shouldDisplayCart, handleCartClick, totalPrice} = useShoppingCart()
   return (
@@ -16,12 +19,18 @@ const CartSidebar = () => {
   
   <SheetContent>
     <SheetHeader>
-      <SheetTitle>My Shopping Cart</SheetTitle>
-      <SheetDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-      </SheetDescription>
+      <SheetTitle className="text-left mb-12 uppercase">My Shopping Cart({cartCount})</SheetTitle>
     </SheetHeader>
+    <>
+    {/* {cartCount === 0 ? <div>Your cart is empty</div>:
+      <ScrollArea>
+        {cartDetails && Object.entries(cartDetails).map((key,item) =>{
+          return <CartItem key={key} item={item}/>
+        }
+        )}
+      </ScrollArea>       
+    } */}
+    </>
   </SheetContent>
 </Sheet>
 

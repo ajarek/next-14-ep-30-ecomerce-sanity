@@ -1,4 +1,5 @@
-import { Button } from '@/components/ui/button'
+
+import AddToCartBtn from '@/components/AddToCartBtn'
 import { client, urlFor } from '@/lib/sanity'
 import Image from 'next/image'
 
@@ -37,7 +38,13 @@ const ProductDetail =async ({params}) => {
         <p className='text-xl'>{productId.categories.map((el)=>el.name+' ')}</p>
         <p className='text-xl'>{productId.description}</p>
         <p className='text-2xl'>${(productId.price).toFixed(2)}</p>
-        <Button variant='default'>Add to cart</Button>
+        <AddToCartBtn
+        name={productId.name} 
+        currency='USD'
+        description={productId.description}
+        images={productId.images}
+        price={productId.price}
+        />
       </div>
     </div>
   )

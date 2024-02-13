@@ -19,7 +19,7 @@ const Navbar = () => {
           BIKES STORE
         </Link>
       </div>
-      <div className=' w-1/2  flex justify-center max-sm:hidden gap-5  '>
+      <div className=' w-1/2  flex justify-center  gap-5  '>
         <Link
           href='/'
           className='link link-hover btn-ghost text-xl'
