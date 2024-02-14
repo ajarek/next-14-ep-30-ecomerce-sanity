@@ -20,7 +20,7 @@ export default function Carousel({ bikes }) {
   return (
     <section className=''>
       <div className='container'>
-        <div className='flex  items-center justify-center'>
+        <div className='flex max-lg:flex-col  items-center justify-center'>
           <div  className=' flex flex-col justify-between gap-4'>
             <h1 className='text-left text-2xl uppercase font-bold mb-2'>
               Where <span className='text-red-500'>Joyful</span> Cycling Begins
@@ -74,23 +74,37 @@ export default function Carousel({ bikes }) {
           freeMode={true}
           watchSlidesProgress={true}
           modules={[FreeMode, Navigation, Thumbs]}
-          className='thumbs mt-3 h-[240px] w-[1144px]   '
+          className='thumbs mt-3 h-[240px] w-[1144px] max-lg:w-[400px] max-lg:h-[160px]  '
+          breakpoints={{
+            640:{
+              slidesPerView: 1
+            },
+            768:{
+              slidesPerView: 2
+            },
+            1024:{
+              slidesPerView: 4
+            },
+            1440:{
+              slidesPerView: 4
+            }
+          }}
         >
           {bikes.map((image, index) => (
             <SwiperSlide key={index}>
-              <button className='flex h-full w-full items-center justify-center bg-secondary border-2 border-border rounded-lg px-2 py-10 relative'>
-                <div className='absolute top-1 left-2 bg-gray-500 text-white p-1 rounded-sm'>
+              <button className='flex h-full w-full items-center justify-center bg-secondary border-2 border-border rounded-lg px-2 py-10 max-lg:py-14 relative'>
+                <div className='absolute top-1 left-2 bg-gray-500 text-white max-lg:text-sm p-1 rounded-sm'>
                   {image.name}
                 </div>
-                <Link href={`product/${image._id}`}className='absolute top-1 right-1 bg-red-500 text-white p-1 rounded-sm'>
-                  <Eye />
+                <Link href={`product/${image._id}`}className='absolute top-1 right-1 bg-red-500 text-white p-1 rounded-sm '>
+                  <Eye className='max-lg:h-[22px]'/>
                 </Link>
                 <Image
                   src={urlFor(image.images[0]).url()}
                   alt={image.name}
                   width={200}
                   height={123}
-                  className='block h-full w-full object-cover'
+                  className='block h-full w-full object-cover max-lg:w-[150px] max-lg:h-[92px] '
                 />
               </button>
             </SwiperSlide>

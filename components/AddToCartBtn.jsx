@@ -7,7 +7,7 @@ const AddToCartBtn = ({ id, currency, price, name, description, images }) => {
   const { addItem } = useShoppingCart()
   const handleCartBtn= () => {
     addItem(bike)
-    router.push('/')
+    router.push('/our')
   }
   const bike = {
     id: id,
