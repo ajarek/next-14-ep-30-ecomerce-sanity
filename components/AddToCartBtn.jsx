@@ -1,9 +1,14 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { useShoppingCart } from 'use-shopping-cart'
-
+import { useRouter } from 'next/navigation'
 const AddToCartBtn = ({ id, currency, price, name, description, images }) => {
+  const router = useRouter()
   const { addItem } = useShoppingCart()
+  const handleCartBtn= () => {
+    addItem(bike)
+    router.push('/')
+  }
   const bike = {
     id: id,
     currency: currency,
@@ -14,7 +19,7 @@ const AddToCartBtn = ({ id, currency, price, name, description, images }) => {
   }
   return (
     <Button
-      onClick={() => addItem(bike)}
+      onClick={ handleCartBtn}
       variant='default'
     >
       Add to cart

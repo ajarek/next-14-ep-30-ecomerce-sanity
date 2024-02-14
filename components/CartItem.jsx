@@ -29,7 +29,7 @@ const CartItem = ({ item }) => {
         </div>
       </div>
 
-      <div>{item.price * item.quantity}</div>
+      <div>{(item.price * item.quantity).toFixed(2)}</div>
       <div>
         <button onClick={() => removeItem(item.id)}>
           <Trash2 color='red'/>

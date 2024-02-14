@@ -27,7 +27,7 @@ const Navbar = () => {
           HOME
         </Link>
         <Link
-          href='/store/bikes'
+          href='/our'
           className='link link-hover btn-ghost text-xl'
         >
           OUR BIKES

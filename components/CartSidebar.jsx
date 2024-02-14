@@ -36,7 +36,7 @@ const CartSidebar = () => {
       <div className="flex justify-end">
         <div className='flex gap-4 items-center'>
           <div>Total</div>
-          <div className="text-xl">${totalPrice}</div>
+          <div className="text-xl">${totalPrice.toFixed(2)}</div>
         </div>
       </div>
     )}

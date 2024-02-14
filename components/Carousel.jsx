@@ -11,10 +11,12 @@ import 'swiper/css/free-mode'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
 import { Button } from '@/components/ui/button'
+import { Eye} from 'lucide-react';
+import { useShoppingCart } from "use-shopping-cart"
 
 export default function Carousel({ bikes }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
-
+  const {cartCount, cartDetails, shouldDisplayCart, handleCartClick, totalPrice} = useShoppingCart()
   return (
     <section className=''>
       <div className='container'>
@@ -27,8 +29,8 @@ export default function Carousel({ bikes }) {
               The Worlds Premium Brands In One Destination
             </p>
             <div className='flex gap-2 mt-3'>
-              <Button>SHOP NOW</Button>
-              <Button variant='destructive'>OUR BIKES</Button>
+              <Link href={'/our'} className='h-10 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md'>SHOP NOW</Link>
+              <Button variant='destructive' onClick={handleCartClick}>YOUR CART</Button>
             </div>
             <div></div>
           </div>
@@ -55,7 +57,7 @@ export default function Carousel({ bikes }) {
                     className='block h-full w-full object-cover'
                   />
                   <Link href={`product/${image._id}`}className='absolute top-1 right-1 bg-red-500 text-white p-1 rounded-sm'>
-                  I choose
+                  <Eye />
                 </Link>
                 </div>
               </SwiperSlide>
@@ -80,6 +82,9 @@ export default function Carousel({ bikes }) {
                 <div className='absolute top-1 left-2 bg-gray-500 text-white p-1 rounded-sm'>
                   {image.name}
                 </div>
+                <Link href={`product/${image._id}`}className='absolute top-1 right-1 bg-red-500 text-white p-1 rounded-sm'>
+                  <Eye />
+                </Link>
                 <Image
                   src={urlFor(image.images[0]).url()}
                   alt={image.name}
