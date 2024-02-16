@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { useShoppingCart } from 'use-shopping-cart'
 import { useRouter } from 'next/navigation'
-const AddToCartBtn = ({ id, currency, price, name, description, images }) => {
+const AddToCartBtn = ({ id, currency, price, name, description, images,price_id }) => {
   const router = useRouter()
   const { addItem } = useShoppingCart()
   const handleCartBtn= () => {
@@ -16,6 +16,7 @@ const AddToCartBtn = ({ id, currency, price, name, description, images }) => {
     description: description,
     images: images,
     price: price,
+    price_id: price_id
   }
   return (
     <Button
