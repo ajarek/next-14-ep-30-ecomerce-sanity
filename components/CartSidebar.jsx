@@ -50,8 +50,8 @@ const CartSidebar = () => {
           )}
         </>
         {cartCount > 0 && (
-          <div className='flex justify-end'>
-            <div className='flex gap-4 items-center'>
+          <div className='flex flex-col  gap-4'>
+            <div className='flex gap-4 items-center justify-end'>
               <div>Total</div>
               <div className='text-xl'>${totalPrice.toFixed(2)}</div>
             </div>
