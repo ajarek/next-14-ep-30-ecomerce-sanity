@@ -1,6 +1,21 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<img width="300" alt="Zrzut ekranu 2024-02-10 232015" src="https://github.com/ajarek/next-14-ep-30-ecomerce-sanity/assets/61388692/f1bc9047-e3b3-40a6-b478-d164ed7e0239">
+
+<img width="300" alt="Zrzut ekranu 2024-02-10 232041" src="https://github.com/ajarek/next-14-ep-30-ecomerce-sanity/assets/61388692/1628f0b8-0b2c-4cf7-85d5-fad5071de98c">
+<img width="300" alt="Zrzut ekranu 2024-02-18 001553" src="https://github.com/ajarek/next-14-ep-30-ecomerce-sanity/assets/61388692/b95f6838-5ee3-426a-9381-4d71eeab2cf4">
+
+<img width="300" alt="Zrzut ekranu 2024-02-18 001553" src="https://github.com/ajarek/next-14-ep-30-ecomerce-sanity/assets/61388692/4c8d8039-1fa9-4bd5-93bf-8c868237d277">
+
+<img width="300" alt="Zrzut ekranu 2024-02-18 001613" src="https://github.com/ajarek/next-14-ep-30-ecomerce-sanity/assets/61388692/c24b10c8-33b9-45fd-bec0-666991fb8fa3">
+
+<img width="300" alt="Zrzut ekranu 2024-02-18 001705" src="https://github.com/ajarek/next-14-ep-30-ecomerce-sanity/assets/61388692/10763430-66be-424d-8404-5de43c261ac0">
+<img width="200" alt="Zrzut ekranu 2024-02-18 001807" src="https://github.com/ajarek/next-14-ep-30-ecomerce-sanity/assets/61388692/6ceadafa-8ceb-487a-89ff-4a4aa2263dcb">
+<img width="200" alt="Zrzut ekranu 2024-02-18 001821" src="https://github.com/ajarek/next-14-ep-30-ecomerce-sanity/assets/61388692/71a2439a-8e13-4d2e-b81a-33114792c1fe">
+
+
+## Getting Started![Uploading Zrzut ekranu 2024-02-10 232041.png…]()
+
 
 First, run the development server:
 
