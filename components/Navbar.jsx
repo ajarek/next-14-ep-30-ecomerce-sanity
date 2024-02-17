@@ -6,7 +6,7 @@ import { useShoppingCart } from 'use-shopping-cart'
 const Navbar = () => {
   const {cartCount, handleCartClick} = useShoppingCart()
   return (
-    <div className='h-[80px] flex justify-between items-center bg-secondary text-secondary-foreground px-8 border-border'>
+    <div className='h-[80px] max-w-[1440px] mx-auto flex justify-between items-center bg-secondary text-secondary-foreground px-8 border-border'>
       <div className='flex items-center'>
         <Link
           href={'/'}
@@ -19,7 +19,7 @@ const Navbar = () => {
           BIKES STORE
         </Link>
       </div>
-      <div className=' w-1/2  flex justify-center  gap-5  '>
+      <div className=' w-1/2  flex justify-center  gap-6  '>
         <Link
           href='/'
           className='link link-hover btn-ghost text-xl'
@@ -34,7 +34,7 @@ const Navbar = () => {
         </Link>
         <div
           onClick={()=>handleCartClick()}
-          className='link link-hover btn-ghost text-xl flex relative items-center'
+          className='link link-hover btn-ghost text-xl flex relative items-center cursor-pointer'
         >
           <div className='w-5 h-5 rounded-full text-secondary text-sm bg-red-600 absolute top-3 left-4 flex justify-center items-center '>
            {cartCount}
